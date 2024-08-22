@@ -1,0 +1,20 @@
+name = "gh-proxy"
+compatibility_date = "2023-12-01"
+
+[env.production]
+name = "gh-proxy"
+routes = [
+  { pattern = "github.zecdn.top", custom_domain = true },
+]
+
+[env.production.vars]
+MODE = "production"
+TARGET_UPSTREAM = ""
+
+[env.staging]
+name = "gh-proxy-staging"
+# route = { pattern = "github-staging.zecdn.top", custom_domain = true }
+
+[env.staging.vars]
+MODE = "staging"
+TARGET_UPSTREAM = ""
